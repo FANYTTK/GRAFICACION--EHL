@@ -1,0 +1,49 @@
+<<!DOCTYPE html>
+<html>
+<head>
+    <title>Processing.JS dentro de la página HTML</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="miLienzo" width="400" height="400"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+    <script>
+        var codigodePrograma = function(instanciaProcessing) { 
+            with (instanciaProcessing) {
+                size(400, 400);
+                frameRate(30);
+
+                // Dibujar el suelo
+                rect(0, 200, 400, 200);
+
+                // Dibujar círculos
+                ellipse(200, 300, 150, 150);
+                ellipse(200, 200, 100, 100);
+                ellipse(200, 120, 75, 75);
+
+                // Dibujar líneas
+                line(160, 200, 50, 50);
+                line(240, 200, 300, 50);
+            }
+        };
+
+        var canvas = document.getElementById("miLienzo");
+        var instanc = new Processing(canvas, codigodePrograma);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
